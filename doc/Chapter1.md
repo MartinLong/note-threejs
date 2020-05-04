@@ -45,7 +45,7 @@
 4. MeshStandardMaterial
 5. MeshPhongMaterial 已弃用
 
-### 场景定时刷新函数的优缺点
+### 场景定时刷新函数的选择
 1. setInterval 缺点是不管浏览器发生什么（如浏览其他网页）都会每隔x毫秒执行一次；而且并没有与屏幕的刷新同步。导致较高的cpu使用率和性能不良。
 2. requestAnimationFrame 函数为为稳定连续的渲染场景提供了良好解决方案。在这个方法的回调函数里完成一帧的绘制操作即可，剩下的交给浏览器。
 
@@ -54,6 +54,16 @@ stats.js
 
 ### 方便调试的第三方GUI库
 dat.GUI
+
+### 场景对浏览器的自适应
+> window.addEventListener('resize', onResize, false);
+function onResize(){
+    //更新摄像机的屏幕长宽比属性
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    //渲染器尺寸
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
 
 
 

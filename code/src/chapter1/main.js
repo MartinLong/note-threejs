@@ -78,6 +78,13 @@ function init() {
     gui.add(controls, 'bouncingSpeed', 0, 0.5);
 
     renderScene();
+
+    window.addEventListener('resize', onResize, false);
+    function onResize(){
+        camara.aspect = window.innerWidth / window.innerHeight;
+        camara.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
 };
 
 function initStats(type) {
@@ -87,3 +94,4 @@ function initStats(type) {
     document.body.appendChild(stats.dom);
     return stats;
 }
+
