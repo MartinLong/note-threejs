@@ -10,13 +10,18 @@
 ### 雾化效果
 雾化效果是：场景中的物体离得越远就会变得越模糊
 1. 线性增长的雾化效果
-> scene.fog = new THREE.Fog(0xffffff, 0.015, 100); // 参数为雾的颜色，近处属性和远处属性。后两属性决定雾化开始和结束的地方，以及加深的程度。
+```
+scene.fog = new THREE.Fog(0xffffff, 0.015, 100); // 参数为雾的颜色，近处属性和远处属性。后两属性决定雾化开始和结束的地方，以及加深的程度。
+```
 2. 指数增长的雾化效果
-> scene.fog = new THREE.FogExp2(0xffffff, 0.01); // 参数为雾的颜色和浓度（浓度最大值为0.1）
+```
+scene.fog = new THREE.FogExp2(0xffffff, 0.01); // 参数为雾的颜色和浓度（浓度最大值为0.1）
+```
 
 ### 自定义几何体
 通过定义顶点和面来自定义创建几何体：
-> var vertices = [
+```
+var vertices = [
     new THREE.Vector3(1,3,1),
     new THREE.Vector3(1,3,-1),
     new THREE.Vector3(1,-1,1),
@@ -44,6 +49,7 @@ var geom = new THREE.Geometry();
 geom.vertices = vertices;
 geom.faces = faces;
 geom.computeFaceNormals();
+```
 
 - vertices 数组保存顶点；
 - faces 数组保存顶点构成的三角形面，需注意顶点的顺序，面向摄像机的面，顺序为顺时针，反之为逆时针；

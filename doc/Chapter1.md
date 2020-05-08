@@ -1,20 +1,32 @@
 ### Unix/Mac系统创建基于python的Web服务器
-> python -m SimpleHTTPServer
+```
+ python -m SimpleHTTPServer
+```
 
 ### Chrome禁用安全性检测方法
 1. windows系统
-> chrome.exe --disable-web-security 
+```
+chrome.exe --disable-web-security 
+```
 2. linux系统
->google-chrome --disable-web-security
+```
+google-chrome --disable-web-security
+```
 3. Mac系统
->open -a "Google Chrome" --args --disable-web-security
+```
+open -a "Google Chrome" --args --disable-web-security
+```
 
 ### vscode three.js 智能提示
 1. 安装node.js，使用npm
 2. 执行命令安装typings 
->npm install -g typings
+```
+npm install -g typings
+```
 3. 项目根目录下执行命令安装three
->npm install three
+```
+npm install three
+```
 4. 新建一个js文件，即可使用代码提示了
 
 ### 显示必要的类或元素
@@ -33,9 +45,11 @@
 
 ### 阴影
 1. 默认情况不会渲染阴影，增加阴影效果需做以下设置
->renderer.shadowMap.Enabled = true; //允许渲染阴影
->plane.receiveShadow = true; //接受阴影的物体
->cube.castShadow = true; //投射阴影的物体
+``` js
+renderer.shadowMap.Enabled = true; //允许渲染阴影
+plane.receiveShadow = true; //接受阴影的物体
+cube.castShadow = true; //投射阴影的物体
+```
 2. 阴影需要耗费大量的计算资源
 
 ### 材质
@@ -56,7 +70,8 @@ stats.js
 dat.GUI
 
 ### 场景对浏览器的自适应
-> window.addEventListener('resize', onResize, false);
+```js
+window.addEventListener('resize', onResize, false);
 function onResize(){
     //更新摄像机的屏幕长宽比属性
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -64,6 +79,7 @@ function onResize(){
     //渲染器尺寸
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
+```
 
 
 
